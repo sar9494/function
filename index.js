@@ -618,9 +618,9 @@ function split(str, splitStr) {
   let newWord = "";
   for (let i = 0; i < str.length; i++) {
     let counter = 0;
-    if (str.charAt(i) === splitStr.charAt(0)) {
+    if (str[i] === splitStr[0]) {
       for (let j = 0; j < splitStr.length; j++) {
-        if (str.charAt(i + j) === splitStr.charAt(j)) {
+        if (str[i+j] === splitStr[j]) {
           counter++;
         }
         if (counter === splitStr.length) {
@@ -809,10 +809,11 @@ function checkBrackets(str) {
   const openBracket = ["(", "{", "["];
   const closeBracket = [")", "}", "]"];
   let counter = 0;
+  let index;
   for (let i = 0; i < str.length; i++) {
     console.log(str[i]);
     for (let j = 0; j < openBracket.length; j++) {
-      if (str[i] === closeBracket[j] && counter % 2 == 0) {
+      if (str[i] === closeBracket[j] && (index==undefined||index!=0)) {
         console.log("jegfia"+counter)
         return false;
       } else {
@@ -821,6 +822,7 @@ function checkBrackets(str) {
           for (let k = i + 1; k < str.length; k++) {
             if (str[k] === closeBracket[j]) {
               counter++;
+              index=k;
             } else {
               return false;
             }
@@ -835,7 +837,7 @@ function checkBrackets(str) {
     return false;
   }
 }
-console.log(checkBrackets("(") + " gc");
+console.log(checkBrackets("()") + " gc");
 //Exercise
 
 // write a JavaScript function that checks if the string is palindrome or not.
