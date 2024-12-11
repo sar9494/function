@@ -87,9 +87,9 @@ console.log(factorial(7));
 
 function evenOrOdd(num) {
   if (num % 2 == 0) {
-    return "even number";
+    return "even";
   } else {
-    return "odd number";
+    return "odd";
   }
 }
 
@@ -237,28 +237,27 @@ console.log(swapName("Alan Turing"));
 // Create a function that takes a string and returns a string with its letters in alphabetical order.
 // AlphabetSoup("javascript") ➞ "aacijprstv"
 // AlphabetSoup(“simplon”) ➞”ilmnops”
-function AlphabetSoup(str){
-    let strArray=str.split("");
-    strArray=strArray.sort();
-    str=strArray.join()
-    return str;
+function AlphabetSoup(str) {
+  let strArray = str.split("");
+  strArray = strArray.sort();
+  str = strArray.join();
+  return str;
 }
-console.log(AlphabetSoup("simplon"))
+console.log(AlphabetSoup("simplon"));
 // Exercise 13
 
 // Create a function that takes a number as argument and returns the incrementing (+1) for each odd number and decrementing (-1) for each even number.
 // incrementOrDecrement(5) ➞4
 // incrementOrDecrement(2) ➞3
 
-function incrementOrDecrement(num){
-    if(num%2==0){
-        return num+=1;
-    }
-    else{
-        return num-=1;
-    }
+function incrementOrDecrement(num) {
+  if (num % 2 == 0) {
+    return (num += 1);
+  } else {
+    return (num -= 1);
+  }
 }
-console.log(incrementOrDecrement(5))
+console.log(incrementOrDecrement(5));
 console.log("functions2");
 
 // Exercise 1
@@ -274,21 +273,18 @@ console.log("functions2");
 // Examples:
 // tipAmount(100, 'good') --> 20
 // tipAmount(40, 'fair') --> 6
-function tipAmount(num,str){
-    if(str==="good"){
-        return num*20/100;
-    }
-    else if(str==="fair"){
-        return num*15/100;
-    }
-    else if(str==="poor"){
-        return num*10/100;
-    }
-    else{
-        return "it's wrong answer"
-    }
+function tipAmount(num, str) {
+  if (str === "good") {
+    return (num * 20) / 100;
+  } else if (str === "fair") {
+    return (num * 15) / 100;
+  } else if (str === "poor") {
+    return (num * 10) / 100;
+  } else {
+    return "it's wrong answer";
+  }
 }
-console.log(tipAmount(40,"fair"));
+console.log(tipAmount(40, "fair"));
 // Exercise 2
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,21 +295,18 @@ console.log(tipAmount(40,"fair"));
 // Examples:
 // totalAmount(100, 'good') --> 120
 // totalAmount(40, 'fair') --> 46
-function totalAmount(num,str){
-    if(str==="good"){
-        return num+=num*20/100;
-    }
-    else if(str==="fair"){
-        return num+=num*15/100;
-    }
-    else if(str==="poor"){
-        return num+=num*10/100;
-    }
-    else{
-        return "it's wrong answer"
-    }
+function totalAmount(num, str) {
+  if (str === "good") {
+    return (num += (num * 20) / 100);
+  } else if (str === "fair") {
+    return (num += (num * 15) / 100);
+  } else if (str === "poor") {
+    return (num += (num * 10) / 100);
+  } else {
+    return "it's wrong answer";
+  }
 }
-console.log(totalAmount(40,"fair"));
+console.log(totalAmount(40, "fair"));
 // Exercise 3
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -324,21 +317,18 @@ console.log(totalAmount(40,"fair"));
 // Examples:
 // splitAmount(100, 'good', 5) --> 24
 // splitAmount(40, 'fair', 2) --> 23
-function splitAmount(num , str, numberOfPeople){
-    if(str==="good"){
-        return (num+=num*20/100)/numberOfPeople;
-    }
-    else if(str==="fair"){
-        return (num+=num*15/100)/numberOfPeople;
-    }
-    else if(str==="poor"){
-        return (num+=num*10/100)/numberOfPeople
-    }
-    else{
-        return "it's wrong answer"
-    }
+function splitAmount(num, str, numberOfPeople) {
+  if (str === "good") {
+    return (num += (num * 20) / 100) / numberOfPeople;
+  } else if (str === "fair") {
+    return (num += (num * 15) / 100) / numberOfPeople;
+  } else if (str === "poor") {
+    return (num += (num * 10) / 100) / numberOfPeople;
+  } else {
+    return "it's wrong answer";
+  }
 }
-console.log(splitAmount(40,"fair",2));
+console.log(splitAmount(40, "fair", 2));
 // Exercise 4
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -354,13 +344,19 @@ console.log(splitAmount(40,"fair",2));
 // isVowel('A') --> true
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
-function isVowel(char){
-    if((char==='a'||char==='e'||char==='i'||char==='u'||char==='o')&&char.length==1){
-        return true;
-      }
-      else{
-        return false;
-      }
+function isVowel(char) {
+  if (
+    (char === "a" ||
+      char === "e" ||
+      char === "i" ||
+      char === "u" ||
+      char === "o") &&
+    char.length == 1
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 console.log(isVowel("a"));
 // Exercise 5
@@ -373,39 +369,41 @@ console.log(isVowel("a"));
 // rockPaperScissors('rock', 'scissors') --> 'player 1'
 // rockPaperScissors('rock', 'paper') --> 'player 2'
 // rockPaperScissors('paper', 'paper') --> 'draw'
-function rockPaperScissors(player1 , player2){
-    player1=(player1.toLowerCase()).trim();
-    player2=(player2.toLowerCase()).trim();
-    if(player1!=="rock"||player1!=="paper"||player1!=="scissors"||player2!=="rock"||player2!=="paper"||player2!=="scissors"){
-    if(player1===player2){
-        return "draw"
+function rockPaperScissors(player1, player2) {
+  player1 = player1.toLowerCase().trim();
+  player2 = player2.toLowerCase().trim();
+  if (
+    player1 !== "rock" ||
+    player1 !== "paper" ||
+    player1 !== "scissors" ||
+    player2 !== "rock" ||
+    player2 !== "paper" ||
+    player2 !== "scissors"
+  ) {
+    if (player1 === player2) {
+      return "draw";
+    } else if (player1 === "rock") {
+      if (player2 === "paper") {
+        return "player 2";
+      } else {
+        return "player 1";
+      }
+    } else if (player1 === "paper") {
+      if (player2 === "rock") {
+        return "player 1";
+      } else {
+        return "player 2";
+      }
+    } else {
+      if (player2 === "rock") {
+        return "player 2";
+      } else {
+        return "player 1";
+      }
     }
-    else if(player1==="rock"){
-        if(player2==="paper"){
-            return "player 2"
-        }
-        else{
-            return "player 1"
-        }
-    }
-    else if(player1==="paper"){
-        if(player2==="rock"){
-            return "player 1"
-        }
-        else{
-            return "player 2"
-        }
-    }
-    else{
-        if(player2==="rock"){
-            return "player 2"
-        }
-        else{
-            return "player 1"
-        }
-    
-    }}
+  }
 }
+console.log(rockPaperScissors("rock", "scissors"));
 // Exercise 6
 
 // Write a function "numberJoinerWhile" which is given a start number and an end number.
@@ -414,11 +412,47 @@ function rockPaperScissors(player1 , player2){
 // Examples:
 // numberJoinerWhile(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerWhile(12, 14) --> '12_13_14'
-
+function numberJoinerWhile(startNumber, endNumber) {
+  let makedStr = "";
+  for (let i = startNumber; i <= endNumber; i++) {
+    if (i != endNumber) {
+      makedStr += i + "_";
+    } else {
+      makedStr += i;
+    }
+  }
+  return makedStr;
+}
+console.log(numberJoinerWhile(1, 10));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
-
+function numberJoinerFor(startNumber, endNumber) {
+  let makedStr = "";
+  if (startNumber <= endNumber) {
+    let i = startNumber;
+    while (i <= endNumber) {
+      if (i != endNumber) {
+        makedStr += i + "_";
+      } else {
+        makedStr += i;
+      }
+      i++;
+    }
+  } else {
+    let i = startNumber;
+    while (i >= endNumber) {
+      if (i != endNumber) {
+        makedStr += i + "_";
+      } else {
+        makedStr += i;
+      }
+      i--;
+    }
+  }
+  return makedStr;
+}
+console.log(numberJoinerFor(10, 1));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",
 // except it takes an optional third argument specifying the separator between the numbers.
@@ -427,7 +461,56 @@ function rockPaperScissors(player1 , player2){
 // numberJoinerFancy(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerFancy(1, 5, '~') --> 1~2~3~4~5
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
-
+function numberJoinerFancy(startNumber, endNumber, between) {
+  let makedStr = "";
+  if (between == undefined) {
+    if (startNumber <= endNumber) {
+      let i = startNumber;
+      while (i <= endNumber) {
+        if (i != endNumber) {
+          makedStr += i + "_";
+        } else {
+          makedStr += i;
+        }
+        i++;
+      }
+    } else {
+      let i = startNumber;
+      while (i >= endNumber) {
+        if (i != endNumber) {
+          makedStr += i + "_";
+        } else {
+          makedStr += i;
+        }
+        i--;
+      }
+    }
+  } else {
+    if (startNumber <= endNumber) {
+      let i = startNumber;
+      while (i <= endNumber) {
+        if (i != endNumber) {
+          makedStr += i + between;
+        } else {
+          makedStr += i;
+        }
+        i++;
+      }
+    } else {
+      let i = startNumber;
+      while (i >= endNumber) {
+        if (i != endNumber) {
+          makedStr += i + between;
+        } else {
+          makedStr += i;
+        }
+        i--;
+      }
+    }
+  }
+  return makedStr;
+}
+console.log(numberJoinerFancy(3, 6, "***BANANAS***"));
 // Exercise 7
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -435,7 +518,14 @@ function rockPaperScissors(player1 , player2){
 //
 // Example:
 // reverse("skoob") --> "books"
-
+function reverse(str) {
+  let makedStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    makedStr += str.charAt(i);
+  }
+  return makedStr;
+}
+console.log(reverse("skoob"));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
 // the longest word in that string. If there are multiple words with the same
@@ -443,7 +533,23 @@ function rockPaperScissors(player1 , player2){
 //
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
+function findLongestWord(str) {
+  let words = str.split(" ");
+  console.log(words);
+  let longest = words[0];
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < words.length; j++) {
+      if (i !== j) {
+        if (longest.length < words[j].length) {
+          longest = words[j];
+        }
+      }
+    }
+  }
 
+  return longest;
+}
+console.log(findLongestWord("a book full of dogs"));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
 // It should clean up the language in its input sentence.
@@ -452,7 +558,23 @@ function rockPaperScissors(player1 , player2){
 // Example:
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
-
+function nicer(str) {
+  const words = str.split(" ");
+  let newStr = "";
+  for (let i = 0; i < words.length; i++) {
+    if (
+      words[i] === "heck" ||
+      words[i] === "darn" ||
+      words[i] === "dang" ||
+      words[i] === "crappy"
+    ) {
+      words[i] = "";
+    }
+    newStr += words[i] + " ";
+  }
+  return newStr;
+}
+console.log(nicer("mom get the heck in here and bring me a darn sandwich."));
 // Exercise 8
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -463,7 +585,23 @@ function rockPaperScissors(player1 , player2){
 // Examples:
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
-
+function capitalizeAll(str) {
+  let words = str.split(" ");
+  let newStr = "";
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < words[i].length; j++) {
+      if (j == 0) {
+        let char = words[i].charAt(0).toUpperCase();
+        newStr += char;
+      } else {
+        newStr += words[i].charAt(j);
+      }
+    }
+    newStr += " ";
+  }
+  return newStr;
+}
+console.log(capitalizeAll("every day is like sunday"));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
 // It should take two inputs: (1) a string and (2) a delimiter string
@@ -474,18 +612,57 @@ function rockPaperScissors(player1 , player2){
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
-
+function split(str, splitStr) {
+  let newArray = [];
+  let arrayElement = "";
+  let newWord = "";
+  for (let i = 0; i < str.length; i++) {
+    let counter = 0;
+    if (str.charAt(i) === splitStr.charAt(0)) {
+      for (let j = 0; j < splitStr.length; j++) {
+        if (str.charAt(i + j) === splitStr.charAt(j)) {
+          counter++;
+        }
+        if (counter === splitStr.length) {
+          newArray.push(newWord);
+          newWord = "";
+        }
+      }
+    } else {
+      newWord += str[i];
+    }
+  }
+  newArray.push(newWord);
+  return newArray;
+}
+console.log(split("a-b-c", "-"));
 // Exercise 9
 
 // Write a function "max" that takes an array of numbers returns the highest
 // number in the array.
-
+function max(array) {
+  let highest = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (highest <= array[i]) {
+      highest = array[i];
+    }
+  }
+  return highest;
+}
+console.log(max([1, 2, 3, 4, 5, 16, 2, 3]));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "sumNumbers" which is given an array of numbers and returns
 // the sum of the numbers.
 // Example:
 // sumNumbers([1, 4, 8]) --> 13
-
+function sumNumbers(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+console.log(sumNumbers([1, 2, 3]));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "positives" which is given an array of numbers and
 // returns a new array containing only the positive numbers within the given array.
@@ -493,17 +670,44 @@ function rockPaperScissors(player1 , player2){
 // positives([1, -3, 5, -3, 0]) --> [1, 5]
 // positives([1, 2, 3]) --> [1, 2, 3]
 // positives([-1, -2, -3]) --> []
-
+function positives(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] >= 0) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+console.log(positives([1, -2, -3]));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "evens" which takes an array of numbers and returns a new
 // array containing only the even numbers in the given array.
 // Hint: you may want to re-use your "isEven" function from 01-predicate-functions.js
-
+function even(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (evenOrOdd(array[i]) == "even") {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+console.log(even([1, -2, -3, 2]));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "odds" which takes an array of numbers and returns a new
 // array containing only the odd numbers in the given array.
 // Hint: you may want to re-use your "isOdd" function from 01-predicate-functions.js
-
+function odds(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (evenOrOdd(array[i]) == "odd") {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+console.log(odds([1, -2, -3, 2]));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "integers" which takes an array of numbers and returns a new
 // array containing only the integers in the given array.
@@ -512,14 +716,30 @@ function rockPaperScissors(player1 , player2){
 //
 // Example:
 // integers([3.14, 2.4, 7, 8.1, 2]) --> [7, 2]
-
+function integers(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (parseInt(array[i]) === array[i]) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+console.log(integers([1.3, -2, -3.2, 2]));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "squareDance" which takes an array of numbers and returns a
 // new array containing the result of squaring each of the numbers in the given array.
 //
 // Example:
 // squareDance([1, 2, 3]) --> [1, 4, 9]
-
+function squareDance(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] * array[i]);
+  }
+  return newArray;
+}
+console.log(squareDance([1, -2, -3, 2]));
 //Exercise
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -531,7 +751,19 @@ function rockPaperScissors(player1 , player2){
 // Input: nums = [2,7,11,15], target = 9
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+function integersToTarget(nums, target) {
+  let newArray = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      if (i !== j && nums[i] + nums[j] === target) {
+        newArray.push(i, j);
+      }
+    }
+  }
 
+  return newArray;
+}
+console.log(integersToTarget([2, 7, 11, 15], 18));
 //Exercise
 
 // Given an integer x, return true if x is palindrome integer.
@@ -543,7 +775,19 @@ function rockPaperScissors(player1 , player2){
 // Input: x = 121
 // Output: true
 // Explanation: 121 reads as 121 from left to right and from right to left.
-
+function isPalindromeInteger(number) {
+  const str = number.toString();
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  if (newStr === str) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isPalindromeInteger(1211));
 //Exercise
 
 // Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -561,7 +805,37 @@ function rockPaperScissors(player1 , player2){
 
 // Input: s = "()[]{}"
 // Output: true
-
+function checkBrackets(str) {
+  const openBracket = ["(", "{", "["];
+  const closeBracket = [")", "}", "]"];
+  let counter = 0;
+  for (let i = 0; i < str.length; i++) {
+    console.log(str[i]);
+    for (let j = 0; j < openBracket.length; j++) {
+      if (str[i] === closeBracket[j] && counter % 2 == 0) {
+        console.log("jegfia"+counter)
+        return false;
+      } else {
+        if (str[i] === openBracket[j]) {
+          counter++;
+          for (let k = i + 1; k < str.length; k++) {
+            if (str[k] === closeBracket[j]) {
+              counter++;
+            } else {
+              return false;
+            }
+          }
+        }
+      }
+    }
+  }
+  if (counter % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(checkBrackets("(") + " gc");
 //Exercise
 
 // write a JavaScript function that checks if the string is palindrome or not.
@@ -579,3 +853,15 @@ function rockPaperScissors(player1 , player2){
 
 // Input: s = "race"
 // Output: false
+function isPalindrome(str) {
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  if (newStr === str) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isPalindrome("rar"))
