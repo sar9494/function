@@ -340,12 +340,12 @@ with just these values. Rather than hardcoding "chocolate" into your function, p
 //   //   return filteredArray;
 // }
 
-// console.log(filterByWord(originalFlavors, "chocolate"));
+console.log(filteredArray(originalFlavors, "chocolate"));
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 function filteredArray(arr,str){
     let newArray=[]
     for(let i=0;i<arr.length;i++){
-        if(arr[i].include(str)===true){
+        if((arr[i].toLowerCase()).includes(str)===true){
             newArray.push(arr[i]);
         }
     }
@@ -361,6 +361,39 @@ function filteredArray(arr,str){
    
   For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/) {
+function getAverageWordLength(arr) {
     /*code here*/
+    let numbers=[];
+    for(let i=0;i<arr.length;i++){
+        let counter=0
+        arr[i]=arr[i].trim();
+        for(let j=0;j<arr[i].length;j++){
+            if(arr[i].charAt(j)===" "){
+                counter++
+            }
+        }
+        numbers.push(counter+1);
+    }
+    let sum=[]
+
+  const a1 = numbers.filter((item, index) => numbers.indexOf(item) === index);
+    for(let i=0;i<numbers.length;i++){
+        let counter=0
+        let element;
+        for(let j=0;j<a1.length;j++){
+            if(a1[j]===numbers[i]){
+                counter++;
+                element=a1[j]
+            }
+        }
+        sum.push({elementValue:element,sumOfValue:counter})
+    }
+    let check=sum[0].sumOfValue
+    for(let i=0;i<sum.length;i++){
+        if(sum[i]){}
+        
+    }
+    return  check
+
 }
+console.log(getAverageWordLength(originalFlavors))
