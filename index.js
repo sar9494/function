@@ -760,8 +760,8 @@ function integersToTarget(nums, target) {
       }
     }
   }
-
-  return newArray;
+  const a1 = newArray.filter((item, index) => newArray.indexOf(item) === index);
+  return a1;
 }
 console.log(integersToTarget([2, 7, 11, 15], 18));
 //Exercise
