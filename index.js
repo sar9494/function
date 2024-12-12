@@ -808,36 +808,12 @@ console.log(isPalindromeInteger(1211));
 function checkBrackets(str) {
   const openBracket = ["(", "{", "["];
   const closeBracket = [")", "}", "]"];
-  let counter = 0;
-  let index;
-  for (let i = 0; i < str.length; i++) {
-    console.log(str[i]);
-    for (let j = 0; j < openBracket.length; j++) {
-      if (str[i] === closeBracket[j] && (index==undefined||index!=0)) {
-        console.log("jegfia"+counter)
-        return false;
-      } else {
-        if (str[i] === openBracket[j]) {
-          counter++;
-          for (let k = i + 1; k < str.length; k++) {
-            if (str[k] === closeBracket[j]) {
-              counter++;
-              index=k;
-            } else {
-              return false;
-            }
-          }
-        }
-      }
-    }
-  }
-  if (counter % 2 == 0) {
-    return true;
-  } else {
-    return false;
+  let newArray=[];
+  for(let i=0;i<str.length;i++){
+    
   }
 }
-console.log(checkBrackets("()") + " gc");
+console.log(checkBrackets("(){}") + " gc");
 //Exercise
 
 // write a JavaScript function that checks if the string is palindrome or not.
