@@ -620,7 +620,7 @@ function split(str, splitStr) {
     let counter = 0;
     if (str[i] === splitStr[0]) {
       for (let j = 0; j < splitStr.length; j++) {
-        if (str[i+j] === splitStr[j]) {
+        if (str[i + j] === splitStr[j]) {
           counter++;
         }
         if (counter === splitStr.length) {
@@ -808,10 +808,18 @@ console.log(isPalindromeInteger(1211));
 function checkBrackets(str) {
   const openBracket = ["(", "{", "["];
   const closeBracket = [")", "}", "]"];
-  let newArray=[];
-  for(let i=0;i<str.length;i++){
-    
+  let newArray = [];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < openBracket.length; j++) {
+      if(newArray.length===0&&str[i]===closeBracket[j]){
+          return false;
+      }
+      else if(str[i]===openBracket[j] || str[i]===closeBracket[j]){
+      newArray.push(str[i]);
+    }
+    }
   }
+  return newArray
 }
 console.log(checkBrackets("(){}") + " gc");
 //Exercise
@@ -824,7 +832,7 @@ console.log(checkBrackets("(){}") + " gc");
 
 // Input: s = "dad"
 // Output: true
-// Example 2:
+// Example 2:    //"abc"
 
 // Input: s = "civic"
 // Output: true
@@ -842,4 +850,4 @@ function isPalindrome(str) {
     return false;
   }
 }
-console.log(isPalindrome("rar"))
+console.log(isPalindrome("rar"));
